@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://b7kc18feesfpn"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_6m5mx"]
+[ext_resource type="PackedScene" uid="uid://brp2jc8wyno6o" path="res://Player/player.tscn" id="1_gs7v3"]
+[ext_resource type="PackedScene" uid="uid://pcekakdbyhde" path="res://Enemies/TestEnemy.tscn" id="3_dhiku"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ejsmd"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_41vau"]
+sky_material = SubResource("ProceduralSkyMaterial_ejsmd")
+
+[sub_resource type="Environment" id="Environment_b55vp"]
+background_mode = 2
+sky = SubResource("Sky_41vau")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_iu1xx"]
+size = Vector2(20, 20)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_i0ntw"]
+data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_6m5mx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_b55vp")
+
+[node name="TempPlane" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_iu1xx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TempPlane"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TempPlane/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_i0ntw")
+
+[node name="Player" parent="." instance=ExtResource("1_gs7v3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.564, 0)
+
+[node name="TestEnemy" parent="." instance=ExtResource("3_dhiku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.97357, 1.13651, 0)
