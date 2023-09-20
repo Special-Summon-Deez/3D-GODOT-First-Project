@@ -1,8 +1,7 @@
-[gd_scene load_steps=35 format=3 uid="uid://brp2jc8wyno6o"]
+[gd_scene load_steps=34 format=3 uid="uid://brp2jc8wyno6o"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_yx70c"]
-[ext_resource type="PackedScene" uid="uid://ya5a3o6nryt4" path="res://Weapons/melee_weapon.tscn" id="2_ddj2p"]
-[ext_resource type="Script" path="res://Weapons/melee_weapon.gd" id="3_qsq6h"]
+[ext_resource type="PackedScene" uid="uid://cvcbvcyjgrkij" path="res://Weapons/melee_weapon.tscn" id="2_ddj2p"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1atrx"]
 
@@ -47,7 +46,7 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
-"method": &"ur_gay"
+"method": &"shootFire"
 }]
 }
 
@@ -271,7 +270,7 @@ states/Swing/position = Vector2(595, 23)
 states/Walk/node = SubResource("AnimationNodeAnimation_qeadl")
 states/Walk/position = Vector2(418, 23)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_t3gwc"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_epklh"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_6q7i7"), "Idle", "Swing", SubResource("AnimationNodeStateMachineTransition_fyqy2"), "Swing", "Idle", SubResource("AnimationNodeStateMachineTransition_7inxj"), "Walk", "Swing", SubResource("AnimationNodeStateMachineTransition_i88d4"), "Swing", "Walk", SubResource("AnimationNodeStateMachineTransition_1rj8c"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_q4pig"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_8pcmd"), "Walk", "Jump", SubResource("AnimationNodeStateMachineTransition_1arxc"), "Jump", "Swing", SubResource("AnimationNodeStateMachineTransition_ri4sq"), "Idle", "Fireball", SubResource("AnimationNodeStateMachineTransition_ftwcr"), "Fireball", "Idle", SubResource("AnimationNodeStateMachineTransition_2oe6d"), "Fireball", "Walk", SubResource("AnimationNodeStateMachineTransition_dvwta"), "Walk", "Fireball", SubResource("AnimationNodeStateMachineTransition_n6akl"), "Jump", "Fireball", SubResource("AnimationNodeStateMachineTransition_md5tu")]
-graph_offset = Vector2(62, 152.187)
+graph_offset = Vector2(63, 75.187)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_yx70c")
@@ -294,7 +293,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
 [node name="MeleeWeapon" parent="Neck/Camera3D" instance=ExtResource("2_ddj2p")]
 transform = Transform3D(0.996195, -0.0871557, 0, 0.0858317, 0.981059, 0.173648, -0.0151345, -0.172987, 0.984806, 0.240697, -0.146171, -0.515946)
-script = ExtResource("3_qsq6h")
 
 [node name="MeleeAnimations" type="AnimationPlayer" parent="Neck/Camera3D/MeleeWeapon"]
 libraries = {

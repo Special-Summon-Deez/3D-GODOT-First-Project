@@ -12,9 +12,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print("PARENT: ", player)
+	pass
 	
-func ur_gay():
+func shootFire():
 	var fireball = fireballLoad.instantiate()
 	var direction = (player.transform.basis * Vector3(player.focus2.global_position.x - player.focus.global_position.x, player.focus2.global_position.y - player.focus.global_position.y, player.focus2.global_position.z - player.focus.global_position.z)).normalized()
 	fireball.position = player.magicSpawn.global_position

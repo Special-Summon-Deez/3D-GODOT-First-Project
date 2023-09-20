@@ -1,4 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://pcekakdbyhde"]
+[gd_scene load_steps=5 format=3 uid="uid://pcekakdbyhde"]
+
+[ext_resource type="Script" path="res://Enemies/TestEnemy.gd" id="1_wav6t"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_asc04"]
+height = 1.93114
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_478ao"]
 albedo_color = Color(0.768627, 0, 0, 1)
@@ -7,7 +12,19 @@ albedo_color = Color(0.768627, 0, 0, 1)
 material = SubResource("StandardMaterial3D_478ao")
 
 [node name="TestEnemy" type="CharacterBody3D"]
+script = ExtResource("1_wav6t")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.833273, 0, 0, 0, 0.833273, 0, 0, 0, 0.833273, 0, -0.00437033, 0)
+shape = SubResource("CapsuleShape3D_asc04")
+
+[node name="EnemyArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemyArea"]
+transform = Transform3D(1.21858, 0, 0, 0, 1.21858, 0, 0, 0, 1.21858, 0, -0.00437033, 0)
+shape = SubResource("CapsuleShape3D_asc04")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="EnemyArea"]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_efvyc")
+skeleton = NodePath("../..")
