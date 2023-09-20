@@ -20,3 +20,9 @@ func shootFire():
 	fireball.position = player.magicSpawn.global_position
 	fireball.apply_central_force(Vector3(direction.x * SPEED, direction.y * SPEED, direction.z * SPEED))
 	get_tree().current_scene.add_child(fireball)
+	
+func disableMeleeCollision():
+	$MeleeWeaponArea/MeleeWeaponCollision.disabled = true
+	
+func enableMeleeCollision():
+	$MeleeWeaponArea/MeleeWeaponCollision.disabled = false

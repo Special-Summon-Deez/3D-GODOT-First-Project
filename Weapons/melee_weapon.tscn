@@ -22,6 +22,7 @@ script = ExtResource("2_g4lw6")
 [node name="MeleeWeaponCollision" type="CollisionShape3D" parent="MeleeWeaponArea"]
 transform = Transform3D(0.1, 4.88944e-09, -1.16415e-10, 7.567e-10, 0.8, 1.86265e-09, -1.16415e-10, -2.98023e-08, 0.1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_5lfw7")
+disabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeleeWeaponArea"]
 transform = Transform3D(0.1, -2.79397e-09, -1.16415e-10, 7.567e-10, 0.8, 1.86265e-09, -1.16415e-10, -1.49012e-08, 0.1, 0, 0, 0)
