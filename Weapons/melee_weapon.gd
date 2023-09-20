@@ -12,7 +12,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print("PARENT: ", player)
+	pass
 	
 func ur_gay():
 	var fireball = fireballLoad.instantiate()
