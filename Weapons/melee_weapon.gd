@@ -26,3 +26,6 @@ func disableMeleeCollision():
 	
 func enableMeleeCollision():
 	$MeleeWeaponArea/MeleeWeaponCollision.disabled = false
+	
+func printWHAT():
+	print("WHAT")

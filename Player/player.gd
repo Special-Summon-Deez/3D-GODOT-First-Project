@@ -66,3 +66,4 @@ func change_state(new_state_name):
 func _on_player_states_animation_finished(anim_name):
 	if anim_name == "Swing" || anim_name == "Fireball":
 		change_state("idle")
+		
