@@ -12,6 +12,7 @@ albedo_color = Color(0.768627, 0, 0, 1)
 material = SubResource("StandardMaterial3D_478ao")
 
 [node name="TestEnemy" type="CharacterBody3D"]
+collision_layer = 2
 script = ExtResource("1_wav6t")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -19,6 +20,7 @@ transform = Transform3D(0.833273, 0, 0, 0, 0.833273, 0, 0, 0, 0.833273, 0, -0.00
 shape = SubResource("CapsuleShape3D_asc04")
 
 [node name="EnemyArea" type="Area3D" parent="."]
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EnemyArea"]
 transform = Transform3D(1.21858, 0, 0, 0, 1.21858, 0, 0, 0, 1.21858, 0, -0.00437033, 0)

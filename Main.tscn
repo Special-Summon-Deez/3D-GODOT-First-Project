@@ -36,9 +36,10 @@ environment = SubResource("Environment_b55vp")
 [node name="TempPlane" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_iu1xx")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TempPlane"]
+[node name="Floor" type="StaticBody3D" parent="TempPlane"]
+collision_layer = 3
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TempPlane/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TempPlane/Floor"]
 shape = SubResource("ConcavePolygonShape3D_i0ntw")
 
 [node name="TestEnemy" parent="." instance=ExtResource("3_dhiku")]
